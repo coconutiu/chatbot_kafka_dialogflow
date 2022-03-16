@@ -25,7 +25,7 @@ public class ConsumerService {
     public void consumeMessage(ConsumerRecord<String, String> consumerRecord) {
         try {
             ChatMessage chatMessage = objectMapper.readValue(consumerRecord.value(), ChatMessage.class);
-            logger.info("消费者消费topic:{} partition:{}的消息 -> {}", consumerRecord.topic(), consumerRecord.partition(), chatMessage.toString());
+            logger.info("Consume message of topic:{} partition:{} -> {}", consumerRecord.topic(), consumerRecord.partition(), chatMessage.toString());
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }

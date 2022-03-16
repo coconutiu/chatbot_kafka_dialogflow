@@ -10,6 +10,7 @@ public class ChatMessage {
 	private MessageType type;
 	private String content;
 	private String sender;
+	private String sessionId;
 
 	public ChatMessage() {
 
@@ -19,11 +20,12 @@ public class ChatMessage {
 		CHAT, JOIN, RESPONSE, LEAVE
 	}
 
-	public ChatMessage(Long messageId, MessageType type, String content, String sender) {
+	public ChatMessage(Long messageId, MessageType type, String content, String sender,String sessionId) {
 		this.messageId = messageId;
 		this.type = type;
 		this.content = content;
 		this.sender = sender;
+		this.sessionId = sessionId;
 	}
 
 	public Long getMessageId() {
@@ -58,6 +60,14 @@ public class ChatMessage {
 		this.sender = sender;
 	}
 
+	public String getSessionId() {
+		return sessionId;
+	}
+
+	public void setSessionId(String sessionId) {
+		this.sessionId = sessionId;
+	}
+
 	@Override
 	public String toString() {
 		return new ToStringBuilder(this)
@@ -65,6 +75,7 @@ public class ChatMessage {
 				.append("type", type)
 				.append("content", content)
 				.append("sender", sender)
+				.append("sessionId", sessionId)
 				.toString();
 	}
 }

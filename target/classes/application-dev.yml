@@ -1,5 +1,5 @@
 chatbotconfiguration: 
   google:
-    name: SetoBot
+    name: EtiqaBot
     projectid: cultivated-pen-343623
     languageCode: en-US
