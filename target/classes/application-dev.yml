@@ -1,0 +1,5 @@
+chatbotconfiguration: 
+  google:
+    name: SetoBot
+    projectid: cultivated-pen-343623
+    languageCode: en-US

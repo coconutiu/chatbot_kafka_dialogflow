@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "cultivated-pen-343623",
+  "private_key_id": "15d7f13e48e7212c58e6b3f54fcb9ff5423d4df5",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCj7AL8qsPyU0K1\n9T26SLHhYeDcu7a3/SqG7CIryLBKzx3m+Owcfczw/YImC+W1GMDDIQgvtdm2b73u\nswbkBYCGeW77rFmSmIppi2nZj2z8bTPwoCrPk9BfbEQMteo6cMF/t0pN5GyeB67e\nYIqRcOcTmCv4EnNk4TuVcG2l66fg4Ch56owHYFfkBbBz23bL0Cpth5YctEy/rAHw\naoQsH6B1GeN4DkSyYedyz7EQdbbHGMyx76h9QwhoeH6YP/NDYAShB35JTyNe6f/3\nh2XTJzMeWvMZffhprC2gybOHCRoltutMVxU038x0VXEPtA209KMyCnXkIz31hB8Q\n0nuPjd9PAgMBAAECggEAGGtZSpCZ3iifIIInLvATZ7LwD5H7N0+EnVLiCEm+UXan\nSrg8XEY1WJU7ZTWSg7brSGZMVOcvRqlAzyVmWmOjcOT4Lo/PTDJjNDPrkdh28OfH\nvAnwNrobaYu0W3xiJ1CS0tbYP+BOegBFAaW6Hs6F7fpWWn9NJ3MSMEHuY7BGcw5U\nkBWfnJ1RfXAEmKhnOQmWRF3uvYjwpcUcD2eUJWX1BNfULGD1s+mJ17aEOoA5JmJz\nRWzszrnPqpNyaXMk0j3Lc+QuN+H3h9ns8GZcvqzwleAs8WqetFDzBj18NFN614yS\ncy6IN1jLhZInmbNaiia/kQTnulKG3EkjKF6JMgOfoQKBgQDOg91ZSXWGVT0d+4TE\nRhLU88LQMxWWVeC2iazTj5KaCzijGrFeCtyXrRkHMSg5LIFCXbsBMx6xUcmoNq6v\n5uSmXKlQtgkpTDj6wevGnlHWDXcxnztQiqtjVtF6jcHrnBviELlsMK001AMhy8tS\n7N3vbixobV+zHxDyrZ8u+5h9EQKBgQDLM2DuZwwkr6bgb1g/X1s7QWMl2Dehmd1J\ncozTLAgtHyca3NJlrKdhM/ceDx5n9IrA2LlGg/Griak58lkC0fbM9L4ytolNfPs0\n0auI1qd+0VyCoq3Yii+PcWtm1wqG9Jq/ZlTBEIwxxcY0NWI1ELA1wDyI/Lj4ZVSj\n1tGcA7gWXwKBgAlQkU9RrOdeON99VMO1lWvdgs/5PeQGA5i4JP913lrsXqWcsptX\nShPdTt+wK+xIQZxItgKb16qP0dSwgriUZYPLciedzlP6iCdnT8cppO9OtC2czQQY\n/RoB9Hjeo/yIkglkT7i9iVJ0rZ98nbMj0+7UvVQIeuSNZipMAn4QAxTBAoGAVJxj\nO0HrW4dMjF2wuEqjeWwDtelvWLnx27h4DSJjkS5MoTHb5fxbge0adAjFl3HLKPvV\nQhiE0/GxZnCUQcld4//xBrrdN0fYbij0LTl8ayEQTVEh5G292hPXLe5S8tj9ar9Y\ngT+7sKnymyCzcPcu+GLAkiXxe3TuJn63rygZSi8CgYEApJWsBb2x7sj+ftIDgIsM\nIIzDVdyy70Q+pdGITRLaXIwcPswfg3BaMghstza1OyCayn8wa2ppjErJZIRIGiN+\nFyrMQEFWdNVSTdgGVqRBHVuIMqLvNMz4nG3b/N9TlIrb7UU7a2qQ49fbVZ2cKJaM\nbkKcnxpPIIpTe3UCYTfofcg=\n-----END PRIVATE KEY-----\n",
+  "client_email": "dialogflow-api-spring-chatbot@cultivated-pen-343623.iam.gserviceaccount.com",
+  "client_id": "113792481960058987916",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dialogflow-api-spring-chatbot%40cultivated-pen-343623.iam.gserviceaccount.com"
+}

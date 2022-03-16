@@ -1,0 +1,27 @@
+{
+  "groups": [
+    {
+      "name": "chatbotconfiguration.google",
+      "type": "com.etiqa.websocket.chat.config.ChatBotConfiguration",
+      "sourceType": "com.etiqa.websocket.chat.config.ChatBotConfiguration"
+    }
+  ],
+  "properties": [
+    {
+      "name": "chatbotconfiguration.google.language-code",
+      "type": "java.lang.String",
+      "sourceType": "com.etiqa.websocket.chat.config.ChatBotConfiguration"
+    },
+    {
+      "name": "chatbotconfiguration.google.name",
+      "type": "java.lang.String",
+      "sourceType": "com.etiqa.websocket.chat.config.ChatBotConfiguration"
+    },
+    {
+      "name": "chatbotconfiguration.google.projectid",
+      "type": "java.lang.String",
+      "sourceType": "com.etiqa.websocket.chat.config.ChatBotConfiguration"
+    }
+  ],
+  "hints": []
+}
