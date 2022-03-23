@@ -27,7 +27,7 @@ body:before {
     position: absolute;
     top: 0;
     left: 0;
-    background: #128ff2;
+    background: #FFC700;
     content: "";
     z-index: 0;
 }
@@ -207,6 +207,7 @@ button.accent {
     border-radius: 50%;
     font-style: normal;
     text-transform: uppercase;
+    background-color: #D69C00;
 }
 
 #chat-page .chat-message-resp {

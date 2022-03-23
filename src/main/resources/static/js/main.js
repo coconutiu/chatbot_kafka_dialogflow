@@ -73,7 +73,7 @@ function sendMessage(event) {
         var avatarElement = document.createElement('i');
         var avatarText = document.createTextNode(chatMessage.sender[0]);
         avatarElement.appendChild(avatarText);
-        avatarElement.style['background-color'] = getAvatarColor(chatMessage.sender);
+        // avatarElement.style['background-color'] = getAvatarColor(chatMessage.sender);
 
         messageElement.appendChild(avatarElement);
 
@@ -114,7 +114,7 @@ function onMessageReceived(payload) {
         var avatarElement = document.createElement('i');
         var avatarText = document.createTextNode(message.sender[0]);
         avatarElement.appendChild(avatarText);
-        avatarElement.style['background-color'] = getAvatarColor(message.sender);
+        // avatarElement.style['background-color'] = getAvatarColor(message.sender);
 
         messageElement.appendChild(avatarElement);
 
