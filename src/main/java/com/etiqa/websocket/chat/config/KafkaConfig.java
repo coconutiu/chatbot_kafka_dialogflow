@@ -12,8 +12,6 @@ public class KafkaConfig {
 
     @Value("${kafka.topic.chat-topic1}")
     String myTopic;
-    @Value("${kafka.topic.chat-topic2}")
-    String myTopic2;
 
     /**
      * JSON消息转换器
@@ -32,9 +30,9 @@ public class KafkaConfig {
         return new NewTopic(myTopic, 2, (short) 1);
     }
 
-    @Bean
-    public NewTopic myTopic2() {
-        //my-topic: partition 数为 1, replica 数为 1
-        return new NewTopic(myTopic2, 1, (short) 1);
-    }
+//    @Bean
+//    public NewTopic myTopic2() {
+//        //my-topic: partition 数为 1, replica 数为 1
+//        return new NewTopic(myTopic2, 1, (short) 1);
+//    }
 }

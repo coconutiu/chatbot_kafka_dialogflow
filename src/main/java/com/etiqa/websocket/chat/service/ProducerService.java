@@ -24,7 +24,7 @@ public class ProducerService {
         ProducerRecord<String, Object> producerRecord = new ProducerRecord<>(topic, null, System.currentTimeMillis(), String.valueOf(o.hashCode()), o);
 
         ListenableFuture<SendResult<String, Object>> future = kafkaTemplate.send(producerRecord);
-        future.addCallback(result -> logger.info("The producer successfully sends a message to topic:{} partition:{}的消息", result.getRecordMetadata().topic(), result.getRecordMetadata().partition()),
+        future.addCallback(result -> logger.info("The producer successfully sends a message to topic:{} partition:{}的消息:{}", result.getRecordMetadata().topic(), result.getRecordMetadata().partition(),o.toString()),
                 ex -> logger.error("The producer failed to send the message, the reason is：{}", ex.getMessage()));
     }
 }

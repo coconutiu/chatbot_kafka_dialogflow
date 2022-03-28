@@ -2,15 +2,16 @@ package com.etiqa.websocket.chat.model;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import javax.annotation.sql.DataSourceDefinition;
-
 
 public class ChatMessage {
 	private Long messageId;
 	private MessageType type;
 	private String content;
 	private String sender;
-	private String sessionId;
+	private String session;
+	private String email;
+	private String magnitude;
+	private String sentiment;
 
 	public ChatMessage() {
 
@@ -20,12 +21,15 @@ public class ChatMessage {
 		CHAT, JOIN, RESPONSE, LEAVE
 	}
 
-	public ChatMessage(Long messageId, MessageType type, String content, String sender,String sessionId) {
+	public ChatMessage(Long messageId, MessageType type, String content, String sender, String session, String email, String magnitude, String sentiment) {
 		this.messageId = messageId;
 		this.type = type;
 		this.content = content;
 		this.sender = sender;
-		this.sessionId = sessionId;
+		this.session = session;
+		this.email = email;
+		this.magnitude = magnitude;
+		this.sentiment = sentiment;
 	}
 
 	public Long getMessageId() {
@@ -60,12 +64,36 @@ public class ChatMessage {
 		this.sender = sender;
 	}
 
-	public String getSessionId() {
-		return sessionId;
+	public String getSession() {
+		return session;
 	}
 
-	public void setSessionId(String sessionId) {
-		this.sessionId = sessionId;
+	public void setSession(String session) {
+		this.session = session;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getMagnitude() {
+		return magnitude;
+	}
+
+	public void setMagnitude(String magnitude) {
+		this.magnitude = magnitude;
+	}
+
+	public String getSentiment() {
+		return sentiment;
+	}
+
+	public void setSentiment(String sentiment) {
+		this.sentiment = sentiment;
 	}
 
 	@Override
@@ -75,7 +103,10 @@ public class ChatMessage {
 				.append("type", type)
 				.append("content", content)
 				.append("sender", sender)
-				.append("sessionId", sessionId)
+				.append("sessionId", session)
+				.append("email", email)
+				.append("magnitude", magnitude)
+				.append("sentiment", sentiment)
 				.toString();
 	}
 }

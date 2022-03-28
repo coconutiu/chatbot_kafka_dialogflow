@@ -1,5 +1,5 @@
 chatbotconfiguration: 
   google:
-    name: EtiqaBot
-    projectid: cultivated-pen-343623
+    name: Chatbot
+    projectid: chatbot4vip
     languageCode: en-US
