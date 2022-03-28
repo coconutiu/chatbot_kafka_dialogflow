@@ -4,7 +4,6 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 
 
 public class ChatMessage {
-	private Long messageId;
 	private MessageType type;
 	private String content;
 	private String sender;
@@ -21,8 +20,7 @@ public class ChatMessage {
 		CHAT, JOIN, RESPONSE, LEAVE
 	}
 
-	public ChatMessage(Long messageId, MessageType type, String content, String sender, String session, String email, String magnitude, String sentiment) {
-		this.messageId = messageId;
+	public ChatMessage(MessageType type, String content, String sender, String session, String email, String magnitude, String sentiment) {
 		this.type = type;
 		this.content = content;
 		this.sender = sender;
@@ -30,14 +28,6 @@ public class ChatMessage {
 		this.email = email;
 		this.magnitude = magnitude;
 		this.sentiment = sentiment;
-	}
-
-	public Long getMessageId() {
-		return messageId;
-	}
-
-	public void setMessageId(Long messageId) {
-		this.messageId = messageId;
 	}
 
 	public MessageType getType() {
@@ -99,7 +89,6 @@ public class ChatMessage {
 	@Override
 	public String toString() {
 		return new ToStringBuilder(this)
-				.append("messageId", messageId)
 				.append("type", type)
 				.append("content", content)
 				.append("sender", sender)
