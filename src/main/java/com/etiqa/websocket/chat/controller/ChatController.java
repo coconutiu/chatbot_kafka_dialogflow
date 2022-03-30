@@ -47,7 +47,6 @@ private static final Logger logger = LogManager.getLogger();
 		System.out.println("User send Message: projectId = " + projectId + ",sessionId = " + sessionId + ",magnitude = " + chatMessage.getMagnitude()+ ",email = " + chatMessage.getEmail()+ ",sentiment = " + chatMessage.getSentiment());
 
 		//response
-//		chatMessage.setSender(chatBotConfiguration.getName());
 //		chatMessage.setSender(username);
 		String responseContent = detectIntentTexts(projectId, chatMessage.getContent(), sessionId, languageCode,chatMessage);
 		ChatMessage cm = new ChatMessage( ChatMessage.MessageType.CHAT,chatMessage.getContent(), chatMessage.getSender(),sessionId,chatMessage.getEmail(),chatMessage.getMagnitude(),chatMessage.getSentiment());
@@ -55,6 +54,8 @@ private static final Logger logger = LogManager.getLogger();
 		String msg = gson.toJson(cm);
 		System.out.println("msg========="+msg);
 		this.producer.sendMessage(chatTopic, msg);
+
+		chatMessage.setSender(chatBotConfiguration.getName());
 		chatMessage.setContent(responseContent);
 		System.out.println("ChatBot response Message: projectId = " + projectId + ",sessionId = " + sessionId + ",languageCode = " + languageCode + ",responseContent = " + responseContent);
 //		this.producer.sendMessage(responseTopic, new ChatMessage(atomicLong.addAndGet(1), ChatMessage.MessageType.RESPONSE,chatMessage.getContent(), chatMessage.getSender(),sessionId,chatMessage.getEmail(),chatMessage.getMagnitude(),chatMessage.getSentiment()));
