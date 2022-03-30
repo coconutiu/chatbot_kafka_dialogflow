@@ -1,0 +1,16 @@
+
+type Customer {
+  id: ID!
+  name: String!
+  #This is description
+  description: String
+}
+
+type Query {
+  allCustomers: [Customer]
+}
+
+schema {
+  query: Query
+}
+
