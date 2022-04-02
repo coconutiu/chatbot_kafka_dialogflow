@@ -336,3 +336,6 @@ button.accent {
     padding: 20px 10px;
     font-family: monospace;
 }
+.help em {
+    text-decoration: underline;
+}
