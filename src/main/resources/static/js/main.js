@@ -7,6 +7,7 @@ var messageForm = document.querySelector('#messageForm');
 var messageInput = document.querySelector('#message');
 var messageArea = document.querySelector('#messageArea');
 var connectingElement = document.querySelector('.connecting');
+var helpInfo = document.querySelector('.help .info');
 
 var stompClient = null;
 var username = null;
@@ -32,6 +33,21 @@ function connect(event) {
         stompClient.connect({}, onConnected, onError);
     }
     event.preventDefault();
+    getHelpData();
+}
+
+function getHelpData() {
+    axios.post('/graphql', {
+        query: '{\n  allCustomers {\n    id\n    name\n    description\n  }\n}'
+      })
+      .then(function (response) {
+        console.log(response.data);
+        if (response.data) {
+            const name = response.data.data.allCustomers[0].name;
+            const phone = response.data.data.allCustomers[0].description;
+        }
+        helpInfo.innerHTML = `If you meet trouble, please feel free to concat your agent:${name},phone number:${phone}`
+      })
 }
 
 

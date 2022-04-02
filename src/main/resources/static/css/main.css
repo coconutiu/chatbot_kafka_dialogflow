@@ -329,3 +329,9 @@ button.accent {
         font-size: 1.1em;
     }
 }
+
+.help {
+    color: red;
+    text-align: center;
+    margin-top: 20px;
+}
