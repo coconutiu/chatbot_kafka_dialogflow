@@ -45,8 +45,8 @@ function getHelpData() {
         if (response.data) {
             const name = response.data.data.allCustomers[0].name;
             const phone = response.data.data.allCustomers[0].description;
+            helpInfo.innerHTML = `If you meet trouble, please feel free to concat your agent:${name},phone number:${phone}`
         }
-        helpInfo.innerHTML = `If you meet trouble, please feel free to concat your agent:${name},phone number:${phone}`
       })
 }
 
