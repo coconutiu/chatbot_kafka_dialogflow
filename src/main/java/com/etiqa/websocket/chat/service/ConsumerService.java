@@ -17,19 +17,19 @@ public class ConsumerService {
 //    private String myTopic;
 //    @Value("${kafka.topic.chat-topic2}")
 //    private String myTopic2;
-    private final Logger logger = LoggerFactory.getLogger(ConsumerService.class);
-    private final ObjectMapper objectMapper = new ObjectMapper();
-
-
-    @KafkaListener(topics = {"${kafka.topic.chat-topic1}"}, groupId = "group1")
-    public void consumeMessage(ConsumerRecord<String, String> consumerRecord) {
-        try {
-            ChatMessage chatMessage = objectMapper.readValue(consumerRecord.value(), ChatMessage.class);
-            logger.info("Consume message of topic:{} partition:{} -> {}", consumerRecord.topic(), consumerRecord.partition(), chatMessage.toString());
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
-    }
+//    private final Logger logger = LoggerFactory.getLogger(ConsumerService.class);
+//    private final ObjectMapper objectMapper = new ObjectMapper();
+//
+//
+//    @KafkaListener(topics = {"${kafka.topic.chat-topic1}"}, groupId = "group1")
+//    public void consumeMessage(ConsumerRecord<String, String> consumerRecord) {
+//        try {
+//            ChatMessage chatMessage = objectMapper.readValue(consumerRecord.value(), ChatMessage.class);
+//            logger.info("Consume message of topic:{} partition:{} -> {}", consumerRecord.topic(), consumerRecord.partition(), chatMessage.toString());
+//        } catch (JsonProcessingException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
 //    @KafkaListener(topics = {"${kafka.topic.my-topic2}"}, groupId = "group2")
 //    public void consumeMessage2(ChatMessage chatMessage) {
