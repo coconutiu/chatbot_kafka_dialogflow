@@ -17,6 +17,7 @@ public class WebsocketChatApplication {
 	private CustomerService customerService;
 
 	public static void main(String[] args) {
+		System.out.println("PageTest==============");
 		SpringApplication.run(WebsocketChatApplication.class, args);
 	}
 	@Bean
