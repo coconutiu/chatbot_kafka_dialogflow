@@ -14,6 +14,7 @@ import java.util.concurrent.atomic.AtomicLong;
 @RestController
 @RequestMapping(value = "/kafka")
 public class KafkaController {
+  
 //    @Value("${kafka.topic.chat-topic1}")
 //    String myTopic;
 ////    @Value("${kafka.topic.chat-topic2}")
