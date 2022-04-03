@@ -1,0 +1,5 @@
+chatbotconfiguration: 
+  google:
+    name: Chatbot
+    projectid: chatbot4vip
+    languageCode: en-US

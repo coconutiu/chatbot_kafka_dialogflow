@@ -1,0 +1,39 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: EtiqaChatbot
+  profiles:
+    active: dev
+#  kafka:
+##    consumer:
+##      bootstrap-servers: localhost:9092
+#      # 配置消费者消息offset是否自动重置(消费者重连会能够接收最开始的消息)
+##      auto-offset-reset: earliest
+##    producer:
+#    bootstrap-servers: pkc-ldvr1.asia-southeast1.gcp.confluent.cloud:9092
+#      # 发送的对象信息变为json格式
+#    value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+#    sasl:
+#      mechanism: PLAIN
+#      jaas:
+#        config: org.apache.kafka.common.security.plain.PlainLoginModule required
+#          username: ''
+#          password: '';
+#    security:
+#      protocol: SASL_SSL
+#    session:
+#      timeout:
+#        ms: 45000
+kafka:
+  topic:
+    chat-topic1: VIPCHATHISTORY
+
+#    spring.kafka.properties.sasl.mechanism=PLAIN
+#    spring.kafka.properties.bootstrap.servers=pkc-ldvr1.asia-southeast1.gcp.confluent.cloud:9092
+#    spring.kafka.properties.sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule   required username='{{ CLUSTER_API_KEY }}'   password='{{ CLUSTER_API_SECRET }}';
+#    spring.kafka.properties.security.protocol=SASL_SSL
+#
+#    # Best practice for higher availability in Apache Kafka clients prior to 3.0
+#    spring.kafka.properties.session.timeout.ms=45000
