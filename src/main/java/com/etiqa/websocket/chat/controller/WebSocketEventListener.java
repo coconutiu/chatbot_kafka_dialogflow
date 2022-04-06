@@ -24,13 +24,13 @@ public class WebSocketEventListener {
 	public void handleWebSocketConnectListener(SessionConnectedEvent event) {
 
 		logger.info("Received a new web socket connection");
-		System.out.println("handleWebSocketConnectListener--sessionId:"+event.getMessage().getHeaders().get("simpSessionId"));
+		logger.info("handleWebSocketConnectListener--sessionId:"+event.getMessage().getHeaders().get("simpSessionId"));
 	}
 
 	@EventListener
 	public void handleWebSocketDisconnectListener(SessionDisconnectEvent event) {
 		String sessionId=event.getSessionId();
-		System.out.println("DisconnectListener SessionId: " + sessionId);
+		logger.info("DisconnectListener SessionId: " + sessionId);
 		StompHeaderAccessor headerAccessor = StompHeaderAccessor.wrap(event.getMessage());
 
 		String username = (String) headerAccessor.getSessionAttributes().get("username");

@@ -1,16 +1,32 @@
+type Agent {
+    id:ID!
+    name: String!
+    phone: String!
+}
 
 type Customer {
   id: ID!
   name: String!
-  #This is description
-  description: String
+  #This is agentId
+  agentid: ID!
+  gender: String!
+  dob: String!
+  nationality: String!
+  active: String!
+  version: String!
+  agent: Agent
 }
 
 type Query {
+  #This is GraphQL query resolver
+  #Search all the customers information
   allCustomers: [Customer]
+  #Search all the agents information
+  allAgents: [Agent]
+
 }
 
 schema {
+    #This is query schema
   query: Query
 }
-

@@ -21,9 +21,9 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		<projectId>chatbot4vip</projectId> <!-- TODO SET PROJECT_ID -->
-		<sessionId>SESSION_ID</sessionId> <!-- TODO SET SESSION_ID -->
-		<contextId>CONTEXT_ID</contextId> <!-- TODO SET CONTEXT_ID -->
+		<projectId>chatbot4vip</projectId>
+		<sessionId>SESSION_ID</sessionId>
+		<contextId>CONTEXT_ID</contextId>
 	</properties>
 
 	<dependencies>

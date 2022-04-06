@@ -8,21 +8,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-
 @Entity
 @Data
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-//@Table(name = "customers")
-public class Customer {
+public class Agent {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private Long agentid;
-    private String gender;
-    private String dob;
-    private String nationality;
-    private String active;
-    private String version;
+    private String phone;
 }
-

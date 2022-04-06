@@ -20,7 +20,6 @@ public class ProducerService {
     }
 
     public void sendMessage(String topic, Object o) {
-        System.out.println("jsontest=========="+o.toString());
         // 分区编号最好为 null，交给 kafka 自己去分配
         ProducerRecord<String, Object> producerRecord = new ProducerRecord<>(topic, null, System.currentTimeMillis(), String.valueOf(o.hashCode()), o);
 

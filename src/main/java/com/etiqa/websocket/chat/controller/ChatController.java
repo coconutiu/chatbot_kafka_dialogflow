@@ -40,11 +40,9 @@ private static final Logger logger = LogManager.getLogger();
 	@MessageMapping("/chat.sendMessage")
 	@SendToUser
 	public ChatMessage sendMessage(@Payload ChatMessage chatMessage, @Header("simpSessionId") String sessionId) {
-		System.out.println("sendMessage--   sessionId:"+sessionId);
 		String projectId = chatBotConfiguration.getProjectid();
-//		String sessionId = UUID.randomUUID().toString();
 		String languageCode = chatBotConfiguration.getLanguageCode();
-		System.out.println("User send Message: projectId = " + projectId + ",sessionId = " + sessionId + ",magnitude = " + chatMessage.getMagnitude()+ ",email = " + chatMessage.getEmail()+ ",sentiment = " + chatMessage.getSentiment());
+		logger.info("User send Message: projectId = " + projectId + ",sessionId = " + sessionId + ",magnitude = " + chatMessage.getMagnitude()+ ",email = " + chatMessage.getEmail()+ ",sentiment = " + chatMessage.getSentiment());
 
 		//response
 //		chatMessage.setSender(username);
@@ -52,12 +50,12 @@ private static final Logger logger = LogManager.getLogger();
 		ChatMessage cm = new ChatMessage( ChatMessage.MessageType.CHAT,chatMessage.getContent(), chatMessage.getSender(),sessionId,chatMessage.getEmail(),chatMessage.getMagnitude(),chatMessage.getSentiment());
 		Gson gson = new Gson();
 		String msg = gson.toJson(cm);
-		System.out.println("msg========="+msg);
+		logger.info("msg========="+msg);
 		this.producer.sendMessage(chatTopic, msg);
 
 		chatMessage.setSender(chatBotConfiguration.getName());
 		chatMessage.setContent(responseContent);
-		System.out.println("ChatBot response Message: projectId = " + projectId + ",sessionId = " + sessionId + ",languageCode = " + languageCode + ",responseContent = " + responseContent);
+		logger.info("ChatBot response Message: projectId = " + projectId + ",sessionId = " + sessionId + ",languageCode = " + languageCode + ",responseContent = " + responseContent);
 //		this.producer.sendMessage(responseTopic, new ChatMessage(atomicLong.addAndGet(1), ChatMessage.MessageType.RESPONSE,chatMessage.getContent(), chatMessage.getSender(),sessionId,chatMessage.getEmail(),chatMessage.getMagnitude(),chatMessage.getSentiment()));
 		return chatMessage;
 	}
@@ -111,50 +109,6 @@ private static final Logger logger = LogManager.getLogger();
 		return String.format("'%s'", queryResult.getFulfillmentText());
 	}
 
-//	@RequestMapping("/detectIntentAudio")
-//	public String detectIntentAudio(String projectId, byte[] inputAudio, String sessionId, String languageCode) {
-//		// Instantiates a client
-//		QueryResult queryResult = null;
-//		try (SessionsClient sessionsClient = SessionsClient.create()) {
-//			// Set the session name using the sessionId (UUID) and projectID (my-project-id)
-//			SessionName session = SessionName.of(projectId, sessionId);
-//			System.out.println("Session Path: " + session.toString());
-//
-//			// Note: hard coding audioEncoding and sampleRateHertz for simplicity.
-//			// Audio encoding of the audio content sent in the query request.
-//			AudioEncoding audioEncoding = AudioEncoding.AUDIO_ENCODING_LINEAR_16;
-//			int sampleRateHertz = 16000;
-//
-//			// Instructs the speech recognizer how to process the audio content.
-//			InputAudioConfig inputAudioConfig = InputAudioConfig.newBuilder().setAudioEncoding(audioEncoding)
-//					.setLanguageCode(languageCode) // languageCode = "en-US"
-//					.setSampleRateHertz(sampleRateHertz) // sampleRateHertz = 16000
-//					.build();
-//
-//			// Build the query with the InputAudioConfig
-//			QueryInput queryInput = QueryInput.newBuilder().setAudioConfig(inputAudioConfig).build();
-//
-//			// Read the bytes from the audio file
-//
-//			// Build the DetectIntentRequest
-//			DetectIntentRequest request = DetectIntentRequest.newBuilder().setSessionWithSessionName(session)
-//					.setQueryInput(queryInput).setInputAudio(ByteString.copyFrom(inputAudio)).build();
-//
-//			// Performs the detect intent request
-//			DetectIntentResponse response = sessionsClient.detectIntent(request);
-//
-//			// Display the query result
-//			queryResult = response.getQueryResult();
-//			logger.info("====================");
-//			logger.info(String.format("Query Text: '%s'\n", queryResult.getQueryText()));
-//			logger.info(String.format("Detected Intent: %s (confidence: %f)\n",
-//					queryResult.getIntent().getDisplayName(), queryResult.getIntentDetectionConfidence()));
-//			logger.info(String.format("Fulfillment Text: '%s'\n", queryResult.getFulfillmentText()));
-//		} catch (Exception e) {
-//			logger.error(e.getMessage(), e);
-//		}
-//		return String.format("'%s'", queryResult.getFulfillmentText());
-//	}
 
 	@MessageMapping("/chat.addUser")
 	@SendTo("/channel/public")
